@@ -1,26 +1,21 @@
 // 1. Array Manipulation
 
-let input = [8, 5, 10, 5, 2, 4, -4, 3, 7, 0, 9];
+let input = [8, 5, 5, 10, 2, 4, -4, 3, 0, 9, "100", true, 8.9];
 
-let array_manipulation = (a) => {
-  let b = [];
+let arrayManipulation = (array) => {
+  let sortedArray = [];
 
   // removing duplicates
-  for (let i = 0; i < a.length; i++) {
-    if (b.indexOf(a[i]) === -1) {
+  array.forEach((item) => {
+    if (!sortedArray.includes(item)) {
       // testing if type is number and if number is integer
-      if (typeof a[i] == "number" && Number.isInteger(a[i]) == true) {
-        b.push(a[i]);
+      if (Number.isInteger(item)) {
+        sortedArray.push(item);
       }
     }
-  }
-
-  // putting in numerical order with sort and compare
-  let c = b.sort((d, e) => {
-    return d - e;
   });
 
-  return c;
+  // putting in numerical order with sort and compare
+  return sortedArray.sort((d, e) => d - e);
 };
-
-console.log(array_manipulation(input));
+console.log(arrayManipulation(input));
