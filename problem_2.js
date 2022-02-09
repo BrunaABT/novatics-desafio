@@ -1,7 +1,7 @@
 // 2. Sudoku Validation
 
 board = [
-  ["8", "3", ".", ".", "7", ".", ".", ".", "."],
+  ["5", "3", ".", ".", "7", ".", ".", ".", "."],
   ["6", ".", ".", "1", "9", "5", ".", ".", "."],
   [".", "9", "8", ".", ".", ".", ".", "6", "."],
   ["8", ".", ".", ".", "6", ".", ".", ".", "3"],
@@ -36,7 +36,7 @@ let sudokuValidation = (board) => {
         rows[i].has(item) ||
         columns[j].has(item) ||
         boxes[boxNumber].has(item) ||
-        Number.isInteger(Number(item)) == false ||
+        !Number.isInteger(Number(item)) ||
         item < 1 ||
         item > 9
       )
